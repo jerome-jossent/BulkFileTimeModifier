@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulkFileTimeModifier", "FilesChangeMetaData\BulkFileTimeModifier.csproj", "{3F5B8D60-0067-4329-818D-72E4D4AC3F93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Standard_UC_JJO", "..\Standard_UC_JJO\Standard_UC_.Net4_JJO\Standard_UC_JJO.csproj", "{24BDEB06-738E-4392-A78D-163185A26329}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F5B8D60-0067-4329-818D-72E4D4AC3F93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F5B8D60-0067-4329-818D-72E4D4AC3F93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F5B8D60-0067-4329-818D-72E4D4AC3F93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F5B8D60-0067-4329-818D-72E4D4AC3F93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24BDEB06-738E-4392-A78D-163185A26329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24BDEB06-738E-4392-A78D-163185A26329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24BDEB06-738E-4392-A78D-163185A26329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24BDEB06-738E-4392-A78D-163185A26329}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80F0D459-C0C4-4323-994D-9E42081D85E8}
+	EndGlobalSection
+EndGlobal
