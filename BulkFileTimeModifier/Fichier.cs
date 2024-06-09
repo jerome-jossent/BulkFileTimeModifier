@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,8 @@ namespace BulkFileTimeModifier
 
 
         public string Filename { get; set; }
+        public string FilenameSimple { get; set; }
+
         public DateTime DateCurrent
         {
             set
@@ -43,6 +46,9 @@ namespace BulkFileTimeModifier
         public Fichier(string filename)
         {
             Filename = filename;
+
+            FileInfo fileInfo = new FileInfo(Filename);
+            FilenameSimple = fileInfo.Name;
         }
     }
 }

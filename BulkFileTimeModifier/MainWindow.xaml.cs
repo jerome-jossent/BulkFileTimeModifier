@@ -50,12 +50,12 @@ namespace BulkFileTimeModifier
                 OnPropertyChanged("folder");
                 SetFichiers(folder);
 
-               Properties.Settings.Default["_folder"] = folder;
-               Properties.Settings.Default.Save();
+                Properties.Settings.Default["_folder"] = folder;
+                Properties.Settings.Default.Save();
             }
             get { return _folder; }
         }
-        string _folder= Properties.Settings.Default["_folder"].ToString();
+        string _folder = Properties.Settings.Default["_folder"].ToString();
 
         public int seconds
         {
@@ -167,6 +167,7 @@ namespace BulkFileTimeModifier
         void PreviewChangeTime(double sec)
         {
             TimeSpan ts = TimeSpan.FromSeconds(sec);
+            List<string> fails = new List<string>();
             switch (timeOperation)
             {
                 case 1:
@@ -177,8 +178,38 @@ namespace BulkFileTimeModifier
                     foreach (Fichier f in fichiers)
                         f.DateAfter = fixedDateTimeValue;
                     break;
+                case 3:
+                    foreach (Fichier f in fichiers)
+                    {
+                        string s = f.FilenameSimple;
+                        try
+                        {
+                            string _s = s.Substring(0, 4);
+                            int YYYY = int.Parse(_s);
+                            int MM = int.Parse(s.Substring(4, 2));
+                            int DD = int.Parse(s.Substring(6, 2));
+                            int HH = int.Parse(s.Substring(9, 2));
+                            int mm = int.Parse(s.Substring(11, 2));
+                            int ss = int.Parse(s.Substring(13, 2));
+
+                            DateTime dt = new DateTime(YYYY, MM, DD, HH, mm, ss);
+                            f.DateAfter = dt;
+                        }
+                        catch (Exception ex)
+                        {
+                            fails.Add(f.Filename);
+                        }
+                    }
+                    break;
             }
             OnPropertyChanged("fichiers");
+
+            if (fails.Count > 0)
+            {
+                MessageBox.Show("Erreur avec les fichiers suivants :\n" +
+                  string.Join("\n", fails));
+            }
+
         }
 
         void ChangeTime()

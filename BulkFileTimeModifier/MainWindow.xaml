@@ -65,6 +65,12 @@
                                              IsEnabled="{Binding Path=timeOperation, Converter={StaticResource radioBoolToIntConverter}, ConverterParameter=2}"/>
                     </StackPanel>
                 </RadioButton>
+                
+                <RadioButton IsChecked="{Binding Path=timeOperation, Converter={StaticResource radioBoolToIntConverter}, ConverterParameter=3}" Margin="8">
+                    <StackPanel Orientation="Horizontal" Margin="8,-2,0,0">
+                        <TextBlock Text="From filename (template : YYYYMMDD HHmmss)"/>                       
+                    </StackPanel>
+                </RadioButton>
 
             </StackPanel>
         </Grid>
